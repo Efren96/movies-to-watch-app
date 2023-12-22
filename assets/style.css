@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans";
+
+
+}
+
+body {
+    /*background-color: rgb(60, 60, 60);*/
+    background: linear-gradient(rgb(60, 60, 60), rgb(45, 45, 45));
+    color: white;
+    min-height: 100vh;
+}
+
+h1 {
+    background: linear-gradient(to right, rgb(60, 60, 60), rgb(50, 52, 191), rgb(60, 60, 60));
+    padding: 20px;
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'ITC Machine';
+    font-size: 55px;
+    color: rgb(238, 178, 67);
+}
+
+.container {
+    display: flex;
+    padding: 25px;
+    gap: 35px;
+}
+
+.movie-input {
+    width: 550px;
+}
+
+.movie-input input {
+    width: 100%;
+    height: 45px;
+    outline: none;
+    padding: 0 18px;
+    margin: 10px 0 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.movie-input button {
+    width: 100%;
+    margin: 8px 0 4px 0;
+    padding: 10px 0;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+
+.search-button {
+    background-color: rgb(226, 165, 33);
+    box-shadow: 0 0 20px rgb(44, 44, 44);
+
+}
+
+.search-button:hover{
+    background-color: rgb(238, 178, 67);
+}
+
+.separator {
+    height: 0.5px;
+    width: 100%;
+    margin: 25px 0;
+    background-color: rgb(189, 189, 189);
+}
+
+.movie-input .search-history {
+    margin-bottom: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(175, 175, 175);
+    color: black;
+    box-shadow: 0 0 20px rgb(44, 44, 44);
+}
+
+.movie-input .search-history:hover{
+    background-color: rgb(72, 72, 72);
+    color: white;
+}
+
+.movie-input .history:hover{
+    background-color: rgb(75, 75, 75);
+    color: white;
+}
+
+.movie-input .history {
+    background-color: rgb(97, 97, 97);
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    border-radius: 1px;
+}
+
+.drop-down{
+    position: relative;
+}
+
+.drop-down-content{
+    display: none;
+    transition: all 0.25s ease-in;
+    transform: translateY(-12px);
+}
+
+.drop-down:hover .drop-down-content{
+    display: inline;
+    align-items: center;
+}
+
+.quote-container {
+    /*background-color: rgb(36, 36, 36);*/
+    background: linear-gradient(to bottom, rgb(36, 36, 36), rgb(56, 56, 56));
+    padding: 20px 70px 20px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.quote-container h3 {
+    font-size: 23px;
+    font-family: 'libre baskerville';
+    font-style: italic;
+}
+
+.movie-display-section h2 {
+    font-size: 18px;
+    margin: 20px 0;
+    background: linear-gradient(to right, rgb(235, 169, 46), rgb(55, 55, 55));
+    padding: 9px;
+    border-radius: 5px;
+
+}
+
+.movie-data {
+    width: 100%;
+
+}
+
+.movie-data h4 {
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 350;
+}
+
+.icon img {
+    max-width: 115px;
+    margin-top: -12px;
+}
+
+.icon h4 {
+    margin-top: -10px;
+    text-align: center;
+}
+
+.movie-cards h3 {
+    font-size: 16px;
+}
+
+.movie-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.movie-cards .card {
+    background: rgb(95, 95, 95);
+    list-style: none;
+    padding: 18px 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgb(44, 44, 44);
+
+}
+
+.movie-cards .card img {
+    max-width: 90px;
+    margin: 5px 0 -12px 15px;
+}
+
+@media (max-width: 1250px) {
+    .movie-data .quote-container {
+        padding: 20px;
+    }
+
+    .movie-cards {
+        flex-wrap: wrap;
+    }
+
+    .movie-cards .card {
+        width: calc(100% / 4 - 15px);
+    }
+}
+
+@media (max-width: 1050px) {
+    .movie-cards .card {
+        width: calc(100% / 3 -15px);
+    }
+}
+
+@media (max-width: 950px) {
+    .movie-input {
+        width: 450px;
+    }
+
+    .movie-cards .card {
+        width: calc(100% / 2 - 10px);
+    }
+
+}
+
+@media (max-width: 750px) {
+    .container {
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+
+    .movie-input {
+        width: 100%;
+    }
+}
