@@ -7,20 +7,40 @@ var options = {
 	}
 };
 
+const quoteUrl = 'https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/random/quote';
+const quoteOptions = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '5050b76713msha0b49ef0e4db710p1491b7jsn6853b8bf6c66',
+		'X-RapidAPI-Host': 'movie-and-tv-shows-quotes.p.rapidapi.com'
+	}
+};
+
+fetch(quoteUrl, quoteOptions)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    //var movieQuote = document.querySelector('.quote');
+    //console.log()
+    // for ( i = 0; i < data.results.length; i++) {
+    //   console.log(data.results[i].originalTitleText.text);
+  
+    // }
+  });
 
 
-var card1 = document.querySelector('#cardImg-1');
-var card2 = document.querySelector('#cardImg-2');
-var card3 = document.querySelector('#cardImg-3');
-var card4 = document.querySelector('#cardImg-4');
-var card5 = document.querySelector('#cardImg-5');
-var card6 = document.querySelector('#cardImg-6');
-var card7 = document.querySelector('#cardImg-7');
-var card8 = document.querySelector('#cardImg-8');
-var card9 = document.querySelector('#cardImg-9');
-var card10 = document.querySelector('#cardImg-10');
+// try {
+// 	const response = await fetch(url, options);
+// 	const result = await response.text();
+// 	console.log(result);
+// } catch (error) {
+// 	console.error(error);
+// }
 
 
+var movitTitles = document.querySelector('#movie-cards');
 
 fetch(url, options)
   .then(function (response) {
@@ -30,16 +50,6 @@ fetch(url, options)
     console.log(data);
     for ( i = 0; i < data.results.length; i++) {
       console.log(data.results[i].originalTitleText.text);
-      card1.textContent = data.results[0].originalTitleText.text;
-      card2.textContent = data.results[1].originalTitleText.text;
-      card3.textContent = data.results[2].originalTitleText.text;
-      card4.textContent = data.results[3].originalTitleText.text;
-      card5.textContent = data.results[4].originalTitleText.text;
-      card6.textContent = data.results[5].originalTitleText.text;
-      card7.textContent = data.results[6].originalTitleText.text;
-      card8.textContent = data.results[7].originalTitleText.text;
-      card9.textContent = data.results[8].originalTitleText.text;
-      card10.textContent = data.results[9].originalTitleText.text;
-
+  
     }
   });
