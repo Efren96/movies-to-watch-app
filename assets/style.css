@@ -166,9 +166,10 @@ h1 {
 .movie-cards {
     display: flex;
     gap: 20px;
+    height: 20vh;
 }
 
-.movie-cards .card {
+.movie-cards .card { */
     background: rgb(95, 95, 95);
     list-style: none;
     padding: 18px 16px;
@@ -178,7 +179,7 @@ h1 {
 }
 
 .movie-cards .card img {
-    max-width: 90px;
+    max-width: 100px;
     margin: 5px 0 -12px 15px;
 }
 

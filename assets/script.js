@@ -1,4 +1,4 @@
-var url = 'https://moviesdatabase.p.rapidapi.com/titles?genre=Comedy&startYear=2000&titleType=movie&endYear=2023';
+var url = 'https://moviesdatabase.p.rapidapi.com/titles?startYear=2000&titleType=movie&endYear=2022';
 var options = {
 	method: 'GET',
 	headers: {
@@ -7,7 +7,7 @@ var options = {
 	}
 };
 
-var movitTitles = document.querySelector('#movie-cards');
+var movieTitles = document.querySelector('.movie-cards');
 
 fetch(url, options)
   .then(function (response) {
@@ -17,6 +17,15 @@ fetch(url, options)
     console.log(data);
     for ( i = 0; i < data.results.length; i++) {
       console.log(data.results[i].originalTitleText.text);
-  
+      console.log(data.results[i].primaryImage.url);
+      var movieEl = document.createElement('p');
+      movieEl.textContent = data.results[i].originalTitleText.text;
+      movieTitles.appendChild(movieEl);
+      var imageEl = document.createElement('i');
+      movieEl.className = 'card';
+      imageEl.setAttribute('href', data.results[i].primaryImage.url);
+      imageEl.className = 'card img';
+      movieEl.appendChild(imageEl);
     }
   });
+
