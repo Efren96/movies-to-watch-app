@@ -21,10 +21,10 @@ fetch(url, options)
       var movieEl = document.createElement('p');
       movieEl.textContent = data.results[i].originalTitleText.text;
       movieTitles.appendChild(movieEl);
-      var imageEl = document.createElement('i');
+      var imageEl = document.createElement('img');
       movieEl.className = 'card';
-      imageEl.setAttribute('href', data.results[i].primaryImage.url);
-      imageEl.className = 'card img';
+      imageEl.setAttribute('src', data.results[i].primaryImage.url);
+      imageEl.className = 'card';
       movieEl.appendChild(imageEl);
     }
   });

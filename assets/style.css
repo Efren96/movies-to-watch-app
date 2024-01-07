@@ -169,12 +169,12 @@ h1 {
     height: 20vh;
 }
 
-.movie-cards .card { */
-    background: rgb(95, 95, 95);
+.movie-cards .card { 
+    background: rgb(25, 25, 25);
     list-style: none;
     padding: 18px 16px;
     border-radius: 5px;
-    box-shadow: 0 0 15px rgb(44, 44, 44);
+    box-shadow: 0 0 15px rgb(255, 255, 255);
 
 }
 
