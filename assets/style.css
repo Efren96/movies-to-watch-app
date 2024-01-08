@@ -8,13 +8,12 @@
 }
 
 body {
-    background: linear-gradient(rgb(60, 60, 60), rgb(45, 45, 45));
+    background-color: rgb(60,60,60);
     color: white;
-    min-height: 100vh;
+    dis
 }
 
 .header{
-
     background: linear-gradient(to right,rgb(49, 51, 179), rgb(60, 60, 60));
 }
 
@@ -34,7 +33,9 @@ h1 {
     font-weight: lighter;
     font-family: 'bebas neue';
     font-size: 65px;
-    color: rgb(238, 178, 67);
+    background: -webkit-linear-gradient(rgb(255, 210, 128), rgb(255, 136, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     width: 20%;
     padding: 15px;
     display: inline;
@@ -73,7 +74,7 @@ h1 {
     background-color: rgb(41, 41, 41);
     height: 100px;
     padding: 20px 20px 20px 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
 }
@@ -84,10 +85,21 @@ h1 {
     font-style: italic;
 }
 
-.movie-display-section h2 {
+.movie-display-section .search-banner {
     font-size: 18px;
     margin: 20px 0;
-    background: linear-gradient(to right, rgb(55, 55, 55), rgb(235, 169, 46), rgb(55, 55, 55));
+    background: linear-gradient(to right, rgb(60, 60, 60), rgb(235, 169, 46), rgb(60, 60, 60));
+    padding: 9px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.movie-display-section .movie-to-watch-banner {
+    font-size: 18px;
+    margin: 20px 0;
+    background: linear-gradient(to right, rgb(60, 60, 60), rgb(49, 51, 179), rgb(60, 60, 60));
     padding: 9px;
     border-radius: 5px;
     display: flex;
@@ -110,22 +122,26 @@ h1 {
 .movie-cards {
     display: flex;
     gap: 20px;
-    height: 20vh;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .movie-cards .card { 
-    background: rgb(25, 25, 25);
+    background-color: rgb(32, 32, 32);
     list-style: none;
-    padding: 18px 16px;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgb(255, 255, 255);
+    padding: 10px 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(71, 71, 71);
+    display: inline-grid;
+    justify-items: center;
 
 }
 
 .movie-cards .card img {
-    max-width: 100px;
-    margin: 5px 0 -12px 15px;
+    max-width: 260px;
+    box-shadow: none;
 }
+
 
 /* @media (max-width: 1250px) {
     .movie-data .quote-container {
