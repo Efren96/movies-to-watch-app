@@ -125,6 +125,12 @@ h1 {
 .movie-cards .card img {
     max-width: 100px;
     margin: 5px 0 -12px 15px;
+    box-shadow: none;
+}
+
+button {
+    background-color: rgb(181, 154, 3);
+    width: 20px;
 }
 
 /* @media (max-width: 1250px) {
