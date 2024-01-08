@@ -25,14 +25,16 @@ var tweetBtn = document.querySelector('#tweet');
  
   //tweet current quote and film
   var twitter = function() {
-    window.open("https://twitter.com/compose/tweet?text= " + quoteInput + " - " + titleInput);
+    var quoteStr = quoteInput.textContent;
+    var titleStr = titleInput.textContent;
+    window.open("https://twitter.com/compose/tweet?text= " + quoteStr + " - " + titleStr);
     
-
-  
   };
 
   /*function to obtain a random quote and display in html*/
-  var randomQuote = fetch(quoteUrl, quoteOptions)
+  //var randomQuote = 
+  function fetchdata(){
+  fetch(quoteUrl, quoteOptions)
   .then(function (response) {
     return response.json();
   })
@@ -46,13 +48,17 @@ var tweetBtn = document.querySelector('#tweet');
 
     quoteInput.appendChild(quoteEl) //appends the h3 element to message id
 
+  })
   
-  });
-
+  .then (function addbtn(){
+  document.getElementById("tweet").style.display = 'block';
+  return false;
+  }
+  )};
 
   //Event listeners
   tweetBtn.addEventListener('click', twitter);
-  quoteBtn.addEventListener('click', randomQuote);
+  quoteBtn.addEventListener('click', fetchdata);
 
 
 

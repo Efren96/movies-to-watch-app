@@ -56,6 +56,7 @@ h1 {
     font-size: 15px;
 }
 
+
 .search-button {
     background-color: rgb(226, 165, 33);
     box-shadow: 0 0 20px rgb(44, 44, 44);
@@ -120,7 +121,7 @@ h1 {
     background: linear-gradient(to bottom, rgb(36, 36, 36), rgb(56, 56, 56));
     padding: 20px 70px 20px 20px;
     border-radius: 5px;
-    display: flex;
+    display: block;
     justify-content: center;
 }
 
@@ -137,6 +138,28 @@ h1 {
     padding: 9px;
     border-radius: 5px;
 
+}
+
+.btn {
+    width: 40%;
+    margin: 8px 0 4px 0;
+    padding: 5px 0;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: rgb(71, 71, 71);
+    color: white;
+    font-family: 'bebas neue';
+    letter-spacing: .22rem;
+    font-size: 28px;
+}
+
+.btn:hover{
+    box-shadow: inset 0px 0px 2px
+  rgb(235, 169, 46), 0 0 5px
+  rgb(235, 169, 46);
+  border-radius: 15px;
+  transition: all 1.0s;
 }
 
 .movie-data {
@@ -181,6 +204,10 @@ h1 {
 .movie-cards .card img {
     max-width: 90px;
     margin: 5px 0 -12px 15px;
+}
+
+#tweet {
+    display: none;
 }
 
 @media (max-width: 1250px) {
