@@ -30,7 +30,8 @@ fetch(url, options)
       movieEl.appendChild(imageEl);
       var addBtn = document.createElement('button');
       movieEl.appendChild(addBtn);
-      addBtn.textContent = "+";
+      addBtn.textContent = "Add+";
+      addBtn.className = "add-button"
       } else if (data.results[i].primaryImage == null) {
         imageEl.setAttribute('src', './assets/images/large_movie_poster.png');
       }

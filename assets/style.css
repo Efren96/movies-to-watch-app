@@ -8,14 +8,15 @@
 }
 
 body {
-    background: linear-gradient(rgb(60, 60, 60), rgb(45, 45, 45));
+    background-color: rgb(60,60,60);
     color: white;
-    min-height: 100vh;
 }
 
 .header{
-
     background: linear-gradient(to right,rgb(49, 51, 179), rgb(60, 60, 60));
+    position: fixed;
+    width: 100%;
+    
 }
 
 .search-input{
@@ -27,14 +28,16 @@ body {
     border-radius: 5px;
     float: right;
     display: inline;
+    outline: none;
 }
 
 h1 {
-    text-align: center;
     font-weight: lighter;
     font-family: 'bebas neue';
     font-size: 65px;
-    color: rgb(238, 178, 67);
+    background: -webkit-linear-gradient(rgb(255, 210, 128), rgb(255, 136, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     width: 20%;
     padding: 15px;
     display: inline;
@@ -70,12 +73,14 @@ h1 {
 }
 
 .quote-container {
-    background-color: rgb(41, 41, 41);
     height: 100px;
     padding: 20px 20px 20px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
+    margin-top: 75px;
+    box-shadow: 0 0 85px rgb(18, 18, 18) inset;
+    outline: solid 0.5px rgb(29, 29, 29);
 }
 
 .quote-container h3 {
@@ -84,10 +89,21 @@ h1 {
     font-style: italic;
 }
 
-.movie-display-section h2 {
+.movie-display-section .search-banner {
     font-size: 18px;
     margin: 20px 0;
-    background: linear-gradient(to right, rgb(55, 55, 55), rgb(235, 169, 46), rgb(55, 55, 55));
+    background: linear-gradient(to right, rgb(60, 60, 60), rgb(226, 165, 33), rgb(60, 60, 60));
+    padding: 9px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.movie-display-section .movie-to-watch-banner {
+    font-size: 18px;
+    margin: 20px 0;
+    background: linear-gradient(to right, rgb(60, 60, 60), rgb(49, 51, 179), rgb(60, 60, 60));
     padding: 9px;
     border-radius: 5px;
     display: flex;
@@ -110,28 +126,105 @@ h1 {
 .movie-cards {
     display: flex;
     gap: 20px;
-    height: 20vh;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .movie-cards .card { 
-    background: rgb(25, 25, 25);
+    background-color: rgb(32, 32, 32);
     list-style: none;
-    padding: 18px 16px;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgb(255, 255, 255);
+    padding: 12px 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(41, 41, 41);
+    display: inline-grid;
+    justify-items: center;
 
 }
 
 .movie-cards .card img {
-    max-width: 100px;
-    margin: 5px 0 -12px 15px;
+    width: 265px;
     box-shadow: none;
 }
 
-button {
-    background-color: rgb(181, 154, 3);
-    width: 20px;
+.add-button{
+width: 92%;
+height: 40px;
+border: none;
+border-radius: 8px;
+background-color: rgb(226, 165, 33);
+/* background-color:rgb(49, 51, 179) ; */
+margin: 10px;
+cursor: pointer;
+color: white;
+font-weight: bold;
+box-shadow: 0 0 20px rgb(0, 0, 0);
 }
+
+.add-button:hover{
+    background-color: rgb(238, 178, 67);
+    color: black;
+}
+
+
+
+@media (max-width: 715px) {
+
+    h1{
+        font-size: 65px;
+    }
+    .search-input {
+        width: 200px;
+    }
+
+} 
+
+@media (max-width: 649px){
+    .card img{
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 520px){
+    .card img{
+        max-width: 165px;
+    }
+}
+
+@media (max-width: 565px){
+    h1{
+
+    }
+    
+    header{
+        height: 150px;
+    }
+    .quote-container{
+        margin-top: 140px;
+    }
+    .search-button{
+        margin-top: 96px;
+    }
+    .search-input{
+        justify-content: center;
+        align-items: center;
+        float: left;
+        margin-left: 20px;
+        width: 310px;
+    }
+}
+
+@media (max-width: 532px){
+    h1{
+        align-items: center;
+    }
+}
+
+@media (max-width: 455px){
+    .search-input {
+        width: 230px;
+    }
+
+} 
 
 /* @media (max-width: 1250px) {
     .movie-data .quote-container {
@@ -151,17 +244,6 @@ button {
     .movie-cards .card {
         width: calc(100% / 3 -15px);
     }
-}
-
-@media (max-width: 950px) {
-    .movie-input {
-        width: 450px;
-    }
-
-    .movie-cards .card {
-        width: calc(100% / 2 - 10px);
-    }
-
 } */
 
 /* @media (max-width: 750px) {
