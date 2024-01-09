@@ -43,7 +43,8 @@ fetch(url, options)
       imageEl.setAttribute('src', './assets/images/large_movie_poster.png');
       addBtn = document.createElement('button');
       movieEl.appendChild(addBtn);
-      addBtn.textContent = "+";
+      addBtn.textContent = "Add+";
+      addBtn.className = "add-button"
       }
       
     }
