@@ -32,7 +32,17 @@ fetch(url, options)
       movieEl.appendChild(addBtn);
       addBtn.textContent = "+";
       } else if (data.results[i].primaryImage == null) {
-        imageEl.setAttribute('src', './assets/images/large_movie_poster.png');
+      movieEl = document.createElement('p');
+      movieEl.textContent = data.results[i].originalTitleText.text;
+      movieTitles.appendChild(movieEl);
+      imageEl = document.createElement('img');
+      movieEl.className = 'card';
+      imageEl.className = 'card';
+      movieEl.appendChild(imageEl);
+      imageEl.setAttribute('src', './assets/images/large_movie_poster.png');
+      addBtn = document.createElement('button');
+      movieEl.appendChild(addBtn);
+      addBtn.textContent = "+";
       }
       
     }
