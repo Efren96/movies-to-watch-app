@@ -225,34 +225,3 @@ box-shadow: 0 0 20px rgb(0, 0, 0);
     }
 
 } 
-
-/* @media (max-width: 1250px) {
-    .movie-data .quote-container {
-        padding: 20px;
-    }
-
-    .movie-cards {
-        flex-wrap: wrap;
-    }
-
-    .movie-cards .card {
-        width: calc(100% / 4 - 15px);
-    }
-}
-
-@media (max-width: 1050px) {
-    .movie-cards .card {
-        width: calc(100% / 3 -15px);
-    }
-} */
-
-/* @media (max-width: 750px) {
-    .container {
-        flex-wrap: wrap;
-        padding: 15px;
-    }
-
-    .movie-input {
-        width: 100%;
-    }
-} */
