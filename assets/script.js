@@ -73,18 +73,31 @@ fetch(url, options)
       if (data.results[i].primaryImage !== null) {
       console.log(data.results[i].originalTitleText.text);
       console.log(data.results[i].primaryImage.url);
+      console.log(data.results[i].primaryImage.caption.plainText);
+
       var movieEl = document.createElement('p');
       movieEl.textContent = data.results[i].originalTitleText.text;
       movieTitles.appendChild(movieEl);
+
       var imageEl = document.createElement('img');
       movieEl.className = 'card';
       imageEl.setAttribute('src', data.results[i].primaryImage.url);
       imageEl.className = 'card';
       movieEl.appendChild(imageEl);
+
+
+
       var addBtn = document.createElement('button');
       movieEl.appendChild(addBtn);
       addBtn.textContent = "Add+";
       addBtn.className = "add-button"
+
+            //this is what we added
+            var previewEl = document.createElement('object');
+            previewEl.className = 'preview';
+            previewEl.textContent = data.results[i].primaryImage.caption.plainText;
+            movieEl.appendChild(previewEl);
+            
       } else if (data.results[i].primaryImage == null) {
         imageEl.setAttribute('src', './assets/images/large_movie_poster.png');
       }

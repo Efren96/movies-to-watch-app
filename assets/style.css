@@ -190,14 +190,29 @@ h1 {
     box-shadow: 0 0 10px rgb(41, 41, 41);
     display: inline-grid;
     justify-items: center;
+    max-width: 300px;
 
 }
 
-.movie-cards .card img {
+
+ .movie-cards .card img {
     width: 265px;
     box-shadow: none;
+    cursor: pointer;
+    transition: all 1s;
+    transition: .5s ease;
+    opacity: 1;
+        }
+
+ .preview {
+    visibility: hidden;
+    inline-size: 200px;
+    overflow-wrap: break-word;
+    text-align: center;
+    margin-top: -330px;
 }
 
+        
 #tweet {
     display: none;
 }
