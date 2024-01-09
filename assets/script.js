@@ -30,7 +30,8 @@ fetch(url, options)
       movieEl.appendChild(imageEl);
       var addBtn = document.createElement('button');
       movieEl.appendChild(addBtn);
-      addBtn.textContent = "+";
+      addBtn.textContent = "Add+";
+      addBtn.className = "add-button"
       } else if (data.results[i].primaryImage == null) {
       movieEl = document.createElement('p');
       movieEl.textContent = data.results[i].originalTitleText.text;
