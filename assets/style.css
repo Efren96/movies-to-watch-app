@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -59,6 +60,13 @@ h1 {
     cursor: pointer;
     color: white;
     font-size: 15px;
+}
+
+
+.search-button {
+    background-color: rgb(226, 165, 33);
+    box-shadow: 0 0 20px rgb(44, 44, 44);
+
     float: right;
     margin-top: 18px;
     margin-right: 10px;
@@ -111,6 +119,50 @@ h1 {
 
 }
 
+.btn {
+    width: 40%;
+    margin: 8px 0 4px 0;
+    padding: 5px 0;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: rgb(71, 71, 71);
+    color: white;
+    font-family: 'bebas neue';
+    letter-spacing: .22rem;
+    font-size: 28px;
+}
+
+.btn:hover{
+    box-shadow: inset 0px 0px 2px
+  rgb(235, 169, 46), 0 0 5px
+  rgb(235, 169, 46);
+  border-radius: 15px;
+  transition: all 1.0s;
+}
+
+.btn {
+    width: 40%;
+    margin: 8px 0 4px 0;
+    padding: 5px 0;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: rgb(71, 71, 71);
+    color: white;
+    font-family: 'bebas neue';
+    letter-spacing: .22rem;
+    font-size: 28px;
+}
+
+.btn:hover{
+    box-shadow: inset 0px 0px 2px
+  rgb(235, 169, 46), 0 0 5px
+  rgb(235, 169, 46);
+  border-radius: 15px;
+  transition: all 1.0s;
+}
+
 .movie-data {
     width: 100%;
 
@@ -141,9 +193,35 @@ h1 {
 
 }
 
-.movie-cards .card img {
+.movie-cards .card-img {
     width: 265px;
     box-shadow: none;
+}
+
+.movie-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-list .card { 
+    background-color: rgb(32, 32, 32);
+    list-style: none;
+    padding: 12px 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(41, 41, 41);
+    display: inline-grid;
+    justify-items: center;
+
+}
+
+.movie-list .card-img {
+    width: 265px;
+    box-shadow: none;
+}
+#tweet {
+    display: none;
 }
 
 .add-button{
