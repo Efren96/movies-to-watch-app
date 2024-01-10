@@ -204,13 +204,7 @@ h1 {
     opacity: 1;
         }
 
- .preview {
-    visibility: hidden;
-    inline-size: 200px;
-    overflow-wrap: break-word;
-    text-align: center;
-    margin-top: -330px;
-}
+
 
         
 #tweet {

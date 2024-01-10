@@ -63,6 +63,8 @@ var tweetBtn = document.querySelector('#tweet');
 var movieTitles = document.querySelector('.movie-cards');
 
 
+
+function fetchMovies(){
 fetch(url, options)
   .then(function (response) {
     return response.json();
@@ -85,22 +87,31 @@ fetch(url, options)
       imageEl.className = 'card';
       movieEl.appendChild(imageEl);
 
-
-
       var addBtn = document.createElement('button');
       movieEl.appendChild(addBtn);
       addBtn.textContent = "Add+";
       addBtn.className = "add-button"
-
-            //this is what we added
-            var previewEl = document.createElement('object');
-            previewEl.className = 'preview';
-            previewEl.textContent = data.results[i].primaryImage.caption.plainText;
-            movieEl.appendChild(previewEl);
             
       } else if (data.results[i].primaryImage == null) {
         imageEl.setAttribute('src', './assets/images/large_movie_poster.png');
       }
-      
+
+
+ var addBtn = document.querySelector('.add-button');
+ var moviesToWatch = document.querySelector('.movie-list');  
+ //var movieList = document.querySelector('.card')
+
+    function addList() {
+      for (let i = 0; i < movieTitles.length; i++)
+      //addBtn.setattribute('id', [i]);
+        moviesToWatch.appendChild(movieEl[i]);
+        localStorage.setItem('moviesToWatch', JSON.stringify(moviesToWatch));
     }
-  });
+      }
+
+      addBtn.addEventListener('click', addList)
+}
+
+)};
+
+fetchMovies();
