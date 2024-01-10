@@ -195,18 +195,33 @@ h1 {
 }
 
 
- .movie-cards .card img {
+.movie-cards .card-img {
     width: 265px;
     box-shadow: none;
-    cursor: pointer;
-    transition: all 1s;
-    transition: .5s ease;
-    opacity: 1;
-        }
+}
 
+.movie-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.movie-list .card { 
+    background-color: rgb(32, 32, 32);
+    list-style: none;
+    padding: 12px 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(41, 41, 41);
+    display: inline-grid;
+    justify-items: center;
 
-        
+}
+
+.movie-list .card-img {
+    width: 265px;
+    box-shadow: none;
+}
 #tweet {
     display: none;
 }
