@@ -190,8 +190,10 @@ h1 {
     box-shadow: 0 0 10px rgb(41, 41, 41);
     display: inline-grid;
     justify-items: center;
+    max-width: 300px;
 
 }
+
 
 .movie-cards .card-img {
     width: 265px;
