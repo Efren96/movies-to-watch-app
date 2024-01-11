@@ -59,7 +59,7 @@ var tweetBtn = document.querySelector('#tweet');
   }
   )};
 
-  //Event Listeners
+  //Event listeners
   tweetBtn.addEventListener('click', twitter);
   quoteBtn.addEventListener('click', fetchdata);
 
