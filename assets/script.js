@@ -1,3 +1,5 @@
+
+// declare variables for movie API home page
 var url = 'https://moviesdatabase.p.rapidapi.com/titles?genre=Action&year=2023&titleType=movie';
 var options = {
 	method: 'GET',
@@ -63,9 +65,7 @@ var tweetBtn = document.querySelector('#tweet');
 
 var movieTitles = document.querySelector('.movie-cards');
 
-
-
-
+// fetch request for home page slides
 fetch(url, options)
   .then(function (response) {
     return response.json();
@@ -73,6 +73,7 @@ fetch(url, options)
   .then(data => {
     console.log(data);
     for ( i = 0; i < data.results.length; i++) {
+      // if statement for the objects in array with null image
       if (data.results[i].primaryImage !== null) {
       console.log(data.results[i].originalTitleText.text);
       console.log(data.results[i].primaryImage.url);
@@ -105,18 +106,22 @@ fetch(url, options)
       addBtn.textContent = "Add+";
       addBtn.className = "add-button";
       }
+      // variable for add button *IN-PROGRESS*
       var addBtn = document.querySelector('.add-button');
+      // event listener for when add button is pressed
       addBtn.addEventListener("click", function(event){
         event.preventDefault();
-        movieEl =  data.results[1].originalTitleText.text
-        imageEl = data.results[1].primaryImage.url;
+        imageEl = data.results[1].primaryImage.url
+        movieEl = data.results[1].originalTitleText.text
         var movieList = {
           movieCard: movieEl,
           imagePoster: imageEl
         };
+        // save card data of button pressed *IN-PROGRESS*
         localStorage.setItem('movieList', JSON.stringify(movieList));
 
         var moviesToWatch = document.querySelector('.movie-list');
+        // add cards to movie list element *IN-PROGRESS*
         movieEl.textContent = data.results[1].originalTitleText.text;
         moviesToWatch.appendChild(movieEl);
         movieEl.className = 'card';
@@ -127,7 +132,7 @@ fetch(url, options)
     }
   });
 
-
+// variables and link for search button
 var urlSearch = 'https://moviesdatabase.p.rapidapi.com/titles/search/title/';
 var optionsSearch = {
 	method: 'GET',
@@ -137,19 +142,20 @@ var optionsSearch = {
 	}
 };
 
-
+// state variables for input data and button
 var titleInput = document.querySelector('.search-input');
 var searchBtn = document.querySelector('.search-button');
-
+// event listener for when you hit search button
 searchBtn.addEventListener("click", function(event) {
   event.preventDefault();
-  
+  // fetch request with info from search
   fetch(urlSearch + titleInput.value, optionsSearch)
   .then(function (response) {
     return response.json();
   })
   .then(data => {
     console.log(data);
+    // this is to clear the screen of previous card elements
     movieTitles.textContent = "";
     for ( i = 0; i < data.results.length; i++) {
       if (data.results[i].primaryImage !== null) {
@@ -187,3 +193,4 @@ searchBtn.addEventListener("click", function(event) {
   })
 
 });
+
