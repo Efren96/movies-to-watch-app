@@ -7,33 +7,44 @@
     <title>Movie Go Plus</title>
     <link rel="stylesheet" href="./assets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Libre+Baskerville&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Libre+Baskerville&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
+    <!--header-->
     <header class="header">
+        <!--header title -->
         <h1>movie go+</h1>
+        <!-- search button -->
         <button class="search-button">Search</button>
+        <!-- search input -->
         <input class="search-input" type="text" placeholder="Search Movie..">
     </header>
+    <!-- main container -->
     <div class="container">
+        <!-- movie data container -->
         <div class="movie-data">
+            <!-- quote container -->
             <div class="quote-container">
                 <div>
-                <div id="message" class="quote"></div>
+                    <div id="message" class="quote"></div>
                 </div>
                 <div>
-                <div id="title" class="film"></div>
+                    <div id="title" class="film"></div>
                 </div>
                 <button id="getMessage" class="btn">Generate a Movie Quote</button>
                 <button id="tweet" class="btn">Tweet Quote</button>
             </div>
-
+            <!-- movie display section where all the search results will appear -->
             <div class="movie-display-section">
+                <!-- search results banner -->
                 <h2 class="search-banner">Search Results</h2>
                 <ul class="movie-cards">
                 </ul>
+                <!-- movies to watch banner -->
                 <h2 class="movie-to-watch-banner">Movies To Watch</h2>
                 <ul class="movie-list">
                 </ul>

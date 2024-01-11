@@ -7,12 +7,12 @@
 
 
 }
-
+/*body styling properties such as bakground color and font color*/
 body {
     background-color: rgb(60,60,60);
     color: white;
 }
-
+/**/
 .header{
     background: linear-gradient(to right,rgb(49, 51, 179), rgb(60, 60, 60));
     position: fixed;
@@ -20,6 +20,7 @@ body {
     
 }
 
+/*styling for the search input*/
 .search-input{
     padding: 10px;
     margin-top: 20px;
@@ -32,6 +33,7 @@ body {
     outline: none;
 }
 
+/*styling for the h1 element which is the main title in the header*/
 h1 {
     font-weight: lighter;
     font-family: 'bebas neue';
@@ -44,12 +46,13 @@ h1 {
     display: inline;
 }
 
+/*styling for the main container*/
 .container {
     display: flex;
     padding: 25px;
 }
 
-
+/*styling for the search button in the header*/
 .search-button {
     background-color: rgb(226, 165, 33);
     box-shadow: 0 0 1px rgb(44, 44, 44);
@@ -60,26 +63,24 @@ h1 {
     cursor: pointer;
     color: white;
     font-size: 15px;
-}
-
-
-.search-button {
     background-color: rgb(226, 165, 33);
-    box-shadow: 0 0 20px rgb(44, 44, 44);
-
     float: right;
     margin-top: 18px;
     margin-right: 10px;
+
 }
 
+/*styling for search button after you hover over it*/
 .search-button:hover{
     background-color: rgb(238, 178, 67);
 }
 
+/*styling for the quote inside the quote container*/
 .quote{
     margin-top: 15px;
 }
 
+/*styiling for the quote container*/
 .quote-container {
     height: 150px;
     padding: 20px 20px 20px 20px;
@@ -91,12 +92,14 @@ h1 {
     outline: solid 0.5px rgb(29, 29, 29);
 }
 
+/*styling for the text inside the quote container button*/
 .quote-container h3 {
     font-size: 23px;
     font-family: 'libre baskerville';
     font-style: italic;
 }
 
+/*styling for the search results banner*/
 .movie-display-section .search-banner {
     font-size: 18px;
     margin: 20px 0;
@@ -108,6 +111,7 @@ h1 {
 
 }
 
+/*styling for movies to watch banner*/
 .movie-display-section .movie-to-watch-banner {
     font-size: 18px;
     margin: 20px 0;
@@ -119,6 +123,7 @@ h1 {
 
 }
 
+/*styling for the "generate movie quote" button*/
 .btn {
     width: 30%;
     height: 60px;
@@ -136,6 +141,7 @@ h1 {
 
 }
 
+/*styling for the "add" button after you hover over it*/
 .btn:hover{
     box-shadow: inset 0px 0px 6px
   rgb(235, 169, 46), 0 0 6px
@@ -144,19 +150,20 @@ h1 {
   background-color: rgb(226, 165, 33) ;
 }
 
-
+/*styling for movie data with*/
 .movie-data {
     width: 100%;
 
 }
 
+/*styling for the h4 element inside the movie data class*/
 .movie-data h4 {
     margin-top: 14px;
     font-size: 14px;
     font-weight: 350;
 }
 
-
+/*styling for the movie cards container*/
 .movie-cards {
     display: flex;
     gap: 20px;
@@ -164,6 +171,7 @@ h1 {
     justify-content: center;
 }
 
+/*styling for the movie cards themselves*/
 .movie-cards .card { 
     background-color: rgb(32, 32, 32);
     list-style: none;
@@ -172,11 +180,14 @@ h1 {
     box-shadow: 0 0 10px rgb(41, 41, 41);
     display: inline-grid;
     justify-items: center;
+    width: 300px;
 
 }
 
+/*styling for the images inside the movie cards*/
 .movie-cards .card .card-img  {
     width: 265px;
+    height: 380px;
     box-shadow: none;
     padding: 10px;
 }
@@ -196,19 +207,22 @@ h1 {
     box-shadow: 0 0 10px rgb(41, 41, 41);
     display: inline-grid;
     justify-items: center;
+    max-width: 300px;
 
 }
 
-.movie-list .card .card-img  {
+.movie-list .card img {
     width: 265px;
     box-shadow: none;
     padding: 10px;
 }
 
+/*styling for tweet button so its not displayed before the generate button is clicked*/
 #tweet {
     display: none;
 }
 
+/*styling for the "add button"*/
 .add-button{
 width: 92%;
 height: 40px;
@@ -222,6 +236,7 @@ font-weight: bold;
 box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
+/*styling for after you hover over the "add button"*/
 .add-button:hover{
     background-color: rgb(238, 178, 67);
     rgb(235, 169, 46), 0 0 6px
@@ -231,8 +246,7 @@ box-shadow: 0 0 20px rgb(0, 0, 0);
 
 }
 
-
-
+/*media queries for making the webside resposive and mobile friendly*/
 @media (max-width: 715px) {
 
     h1{
@@ -244,18 +258,19 @@ box-shadow: 0 0 20px rgb(0, 0, 0);
 
     .btn{
         font-size: 14px;
+        width: 200px;
     }
 } 
 
 @media (max-width: 649px){
     .card img{
-        max-width: 200px;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 520px){
     .card img{
-        max-width: 165px;
+        max-width: 300px;
     }
 }
 

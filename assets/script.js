@@ -1,4 +1,4 @@
-var url = 'https://moviesdatabase.p.rapidapi.com/titles?genre=Comedy&year=2023';
+var url = 'https://moviesdatabase.p.rapidapi.com/titles?genre=Action&year=2023&titleType=movie';
 var options = {
 	method: 'GET',
 	headers: {
@@ -64,12 +64,94 @@ var tweetBtn = document.querySelector('#tweet');
 var movieTitles = document.querySelector('.movie-cards');
 
 
+
+
 fetch(url, options)
   .then(function (response) {
     return response.json();
   })
   .then(data => {
     console.log(data);
+    for ( i = 0; i < data.results.length; i++) {
+      if (data.results[i].primaryImage !== null) {
+      console.log(data.results[i].originalTitleText.text);
+      console.log(data.results[i].primaryImage.url);
+      console.log(data.results[i].primaryImage.caption.plainText);
+
+      var movieEl = document.createElement('p');
+      movieEl.textContent = data.results[i].originalTitleText.text;
+      movieTitles.appendChild(movieEl);
+
+      var imageEl = document.createElement('img');
+      movieEl.className = 'card';
+      imageEl.setAttribute('src', data.results[i].primaryImage.url);
+      imageEl.className = 'card-img';
+      movieEl.appendChild(imageEl);
+      var addBtn = document.createElement('button');
+      movieEl.appendChild(addBtn);
+      addBtn.textContent = "add+";
+      addBtn.className = "add-button";
+      } else if (data.results[i].primaryImage == null) {
+      movieEl = document.createElement('p');
+      movieEl.textContent = data.results[i].originalTitleText.text;
+      movieTitles.appendChild(movieEl);
+      imageEl = document.createElement('img');
+      movieEl.className = 'card';
+      imageEl.className = 'card-img';
+      movieEl.appendChild(imageEl);
+      imageEl.setAttribute('src', './assets/images/large_movie_poster.png');
+      addBtn = document.createElement('button');
+      movieEl.appendChild(addBtn);
+      addBtn.textContent = "Add+";
+      addBtn.className = "add-button"; 
+
+      }
+
+      var addBtn = document.querySelector('.add-button');
+      addBtn.addEventListener("click", function(event){
+        event.preventDefault();
+
+        var movieList = {
+          movieCard: data.results[0].originalTitleText.text,
+          imagePoster: data.results[0].primaryImage.url
+        };
+        localStorage.setItem('movieList', JSON.stringify(movieList));
+
+        var moviesToWatch = document.querySelector('.movie-list');
+        movieEl.textContent = data.results[0].originalTitleText.text;
+        moviesToWatch.appendChild(movieEl);
+        movieEl.className = 'card';
+        imageEl.setAttribute('src', data.results[0].primaryImage.url);
+        imageEl.className = 'card-img';
+        movieEl.appendChild(imageEl);
+      });
+      
+    }
+  });
+
+var urlSearch = 'https://moviesdatabase.p.rapidapi.com/titles/search/title/';
+var optionsSearch = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '345270be8dmshbe83add1aba092bp1d159ajsn7ef5dd509c26',
+		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+	}
+};
+
+
+var titleInput = document.querySelector('.search-input');
+var searchBtn = document.querySelector('.search-button');
+
+searchBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+  
+  fetch(urlSearch + titleInput.value, optionsSearch)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    movieTitles.textContent = "";
     for ( i = 0; i < data.results.length; i++) {
       if (data.results[i].primaryImage !== null) {
       console.log(data.results[i].originalTitleText.text);
@@ -82,10 +164,12 @@ fetch(url, options)
       imageEl.setAttribute('src', data.results[i].primaryImage.url);
       imageEl.className = 'card-img';
       movieEl.appendChild(imageEl);
+
       var addBtn = document.createElement('button');
       movieEl.appendChild(addBtn);
       addBtn.textContent = "Add+";
       addBtn.className = "add-button"
+            
       } else if (data.results[i].primaryImage == null) {
       movieEl = document.createElement('p');
       movieEl.textContent = data.results[i].originalTitleText.text;
@@ -100,30 +184,7 @@ fetch(url, options)
       addBtn.textContent = "Add+";
       addBtn.className = "add-button"
       }
-
+    
     }
-
-    var addBtn = document.querySelector('.add-button');
-    
-    addBtn.addEventListener("click", function(event){
-      event.preventDefault();
-      var movieList = {
-        movieCard: data.results[1].originalTitleText.text,
-        imagePoster: data.results[1].primaryImage.url
-      };
-      localStorage.setItem('movieList', JSON.stringify(movieList));
-  
-      var moviesToWatch = document.querySelector('.movie-list');
-  
-      movieEl.textContent = data.results[0].originalTitleText.text;
-      moviesToWatch.appendChild(movieEl);
-      movieEl.className = 'card';
-      imageEl.setAttribute('src', data.results[0].primaryImage.url);
-      imageEl.className = 'card-img';
-      movieEl.appendChild(imageEl);
-    
-    });
   });
-
-
-
+});
