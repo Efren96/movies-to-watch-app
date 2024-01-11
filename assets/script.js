@@ -103,8 +103,9 @@ fetch(url, options)
       addBtn.textContent = "Add+";
       addBtn.className = "add-button";
       }
+      // variable for add button *IN-PROGRESS*
       var addBtn = document.querySelector('.add-button');
-
+      // event listener for when add button is pressed
       addBtn.addEventListener("click", function(event){
         event.preventDefault();
         imageEl = data.results[1].primaryImage.url
@@ -113,10 +114,11 @@ fetch(url, options)
           movieCard: movieEl,
           imagePoster: imageEl
         };
+        // save card data of button pressed *IN-PROGRESS*
         localStorage.setItem('movieList', JSON.stringify(movieList));
 
         var moviesToWatch = document.querySelector('.movie-list');
-
+        // add cards to movie list element *IN-PROGRESS*
         movieEl.textContent = data.results[1].originalTitleText.text;
         moviesToWatch.appendChild(movieEl);
         movieEl.className = 'card';
