@@ -108,16 +108,10 @@ fetch(url, options)
 
       }
       // variable for add button *IN-PROGRESS*
-
       var addBtn = document.querySelector('.add-button');
       // event listener for when add button is pressed
       addBtn.addEventListener("click", function(event){
         event.preventDefault();
-
-
-
-        imageEl = data.results[1].primaryImage.url
-        movieEl = data.results[1].originalTitleText.text
 
         var movieList = {
           movieCard: data.results[0].originalTitleText.text,
@@ -125,14 +119,10 @@ fetch(url, options)
         };
         // save card data of button pressed *IN-PROGRESS*
         localStorage.setItem('movieList', JSON.stringify(movieList));
-
-        var moviesToWatch = document.querySelector('.movie-list');
-
-        movieEl.textContent = data.results[0].originalTitleText.text;
         
         // add cards to movie list element *IN-PROGRESS*
-        movieEl.textContent = data.results[1].originalTitleText.text;
-
+        var moviesToWatch = document.querySelector('.movie-list');
+        movieEl.textContent = data.results[0].originalTitleText.text;
         moviesToWatch.appendChild(movieEl);
         movieEl.className = 'card';
         imageEl.setAttribute('src', data.results[0].primaryImage.url);
