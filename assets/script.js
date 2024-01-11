@@ -77,9 +77,12 @@ fetch(url, options)
       if (data.results[i].primaryImage !== null) {
       console.log(data.results[i].originalTitleText.text);
       console.log(data.results[i].primaryImage.url);
+      console.log(data.results[i].primaryImage.caption.plainText);
+
       var movieEl = document.createElement('p');
       movieEl.textContent = data.results[i].originalTitleText.text;
       movieTitles.appendChild(movieEl);
+
       var imageEl = document.createElement('img');
       movieEl.className = 'card';
       imageEl.setAttribute('src', data.results[i].primaryImage.url);
@@ -166,10 +169,12 @@ searchBtn.addEventListener("click", function(event) {
       imageEl.setAttribute('src', data.results[i].primaryImage.url);
       imageEl.className = 'card-img';
       movieEl.appendChild(imageEl);
+
       var addBtn = document.createElement('button');
       movieEl.appendChild(addBtn);
       addBtn.textContent = "Add+";
       addBtn.className = "add-button"
+            
       } else if (data.results[i].primaryImage == null) {
       movieEl = document.createElement('p');
       movieEl.textContent = data.results[i].originalTitleText.text;
