@@ -104,33 +104,46 @@ fetch(url, options)
       addBtn = document.createElement('button');
       movieEl.appendChild(addBtn);
       addBtn.textContent = "Add+";
-      addBtn.className = "add-button";
+      addBtn.className = "add-button"; 
+
       }
       // variable for add button *IN-PROGRESS*
+
       var addBtn = document.querySelector('.add-button');
       // event listener for when add button is pressed
       addBtn.addEventListener("click", function(event){
         event.preventDefault();
+
+
+
         imageEl = data.results[1].primaryImage.url
         movieEl = data.results[1].originalTitleText.text
+
         var movieList = {
-          movieCard: movieEl,
-          imagePoster: imageEl
+          movieCard: data.results[0].originalTitleText.text,
+          imagePoster: data.results[0].primaryImage.url
         };
         // save card data of button pressed *IN-PROGRESS*
         localStorage.setItem('movieList', JSON.stringify(movieList));
 
         var moviesToWatch = document.querySelector('.movie-list');
+
+        movieEl.textContent = data.results[0].originalTitleText.text;
+        
         // add cards to movie list element *IN-PROGRESS*
         movieEl.textContent = data.results[1].originalTitleText.text;
+
         moviesToWatch.appendChild(movieEl);
         movieEl.className = 'card';
-        imageEl.setAttribute('src', data.results[1].primaryImage.url);
+        imageEl.setAttribute('src', data.results[0].primaryImage.url);
         imageEl.className = 'card-img';
         movieEl.appendChild(imageEl);
       });
+      
     }
   });
+
+
 
 // variables and link for search button
 var urlSearch = 'https://moviesdatabase.p.rapidapi.com/titles/search/title/';
@@ -189,8 +202,8 @@ searchBtn.addEventListener("click", function(event) {
       addBtn.textContent = "Add+";
       addBtn.className = "add-button"
       }
+    
     }
-  })
-
+  });
 });
 
